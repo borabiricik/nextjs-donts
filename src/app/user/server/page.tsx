@@ -2,10 +2,10 @@ import type { User, UserResponse } from "@/types/user"
 import axios from "axios"
 import React from "react"
 
-// Not: Burada bazi problemler var:
-// 1- Network tabina bak. Nereye nasil istek attigimiz her sey ortada.
-// 2- Herhangi bir cacheleme yapmadik. Her istekte api'ye sifirdan bir istek atiyoruz.
-// 3- Kullanicilarin listelendigi HTML'i kullanicinin bilgisayarinda cizdiriyoruz.
+// Not:
+// 1- Bu sayfa sunucuda calisacak.
+// 2- Network tabina bakarsak sadece bir istek var o da sayfanin HTML'ini donduruyor.
+// 3- Boylece hem istek detaylarini gizlemis oluyoruz hem de burada agir bir islem oldugunu dusunursek sunucuda yapmak daha mantikli.
 
 const ServerUsersPage = async () => {
   const {
