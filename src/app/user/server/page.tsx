@@ -1,25 +1,16 @@
-"use client"
 import type { User, UserResponse } from "@/types/user"
 import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 // Not: Burada bazi problemler var:
 // 1- Network tabina bak. Nereye nasil istek attigimiz her sey ortada.
 // 2- Herhangi bir cacheleme yapmadik. Her istekte api'ye sifirdan bir istek atiyoruz.
 // 3- Kullanicilarin listelendigi HTML'i kullanicinin bilgisayarinda cizdiriyoruz.
 
-const UsersPage = () => {
-  const [users, setusers] = useState<User[]>([])
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await axios.get<UserResponse>(
-        "https://dummyjson.com/users"
-      )
-      setusers(response.data.users)
-    }
-    fetchUsers()
-  }, [])
+const ServerUsersPage = async () => {
+  const {
+    data: { users },
+  } = await axios.get<UserResponse>("https://dummyjson.com/users")
 
   return (
     <div className="p-10">
@@ -44,4 +35,4 @@ const UsersPage = () => {
   )
 }
 
-export default UsersPage
+export default ServerUsersPage
