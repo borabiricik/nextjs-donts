@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import classNames from "classnames"
 import Link from "next/link"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,6 +30,7 @@ export default function RootLayout({
           <Link href={"/user/1"}>My User</Link>
         </nav>
         <main>{children}</main>
+        <ToastContainer />
       </body>
     </html>
   )
