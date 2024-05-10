@@ -1,4 +1,5 @@
 "use client"
+import Example from "@/components/Example"
 import type { User, UserResponse } from "@/types/user"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
