@@ -28,6 +28,8 @@ export default function RootLayout({
           <Link href={"/about"}>About</Link>
           <Link href={"/user"}>Users</Link>
           <Link href={"/user/1"}>My User</Link>
+          <Link href={"/auth/login"}>Login</Link>
+          <Link href={"/auth/login/server"}>Login/Server</Link>
         </nav>
         <main>{children}</main>
         <ToastContainer />
